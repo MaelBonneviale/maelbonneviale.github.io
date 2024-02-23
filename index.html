@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css">
+
+	<style>
+		
+		body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+
+	</style>
+
+</head>
+<body>
+
+	<div id="map"></div>
+
+	<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+	<script>
+		
+		mapboxgl.accessToken = 'pk.eyJ1IjoibWFsYm9uIiwiYSI6ImNsc3gxbDI1MTJ0M2cyam5zeTY1azlsZDcifQ.cY2w7kGfN9hFetortJCNdg';
+	    const map = new mapboxgl.Map({
+	        container: 'map',
+	        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+	        style: 'mapbox://styles/malbon/clsx1xj0t009f01o3gutgbufd',
+	        center: [3.98333, 49.25],
+	        zoom: 11.15
+	    });
+
+	    map.on('load', () => {
+	        map.addSource('places', {
+	            'type': 'geojson',
+	            'data': {
+	                'type': 'FeatureCollection',
+	                'features': [
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP de Bahreïn</strong><p>Circuit international de Sakhir</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [50.510827, 26.031968]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP dArabie Saoudite</strong><p>Jeddah Corniche Circuit</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [39, 21]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP dAustralie</strong><p>Circuit de lAlbert Park</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [144, -37]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP dAzerbaijan</strong><p>Circuit urbain de Bakou</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [49, 40]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                "<strong>GP de Miami</strong><p>Miami International Autodrome</p>"
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [-80, 25]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP dEmilie-Romagne</strong><p>Autodromo Enzo e Dino Ferrari (annulé pour cause dinondations)</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [11, 44]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP de Monaco</strong><p>Circuit de Monaco</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [7, 43]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                "<strong>GP dEspagne</strong><p>Circuit de Barcelona-Catalunya</p>"
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [2, 41]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP du Canada</strong><p>Circuit Gilles-Villeneuve</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [-73, 45]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP dAutriche</strong><p>Circuit de Spielberg</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [14, 47]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP de Grande-Bretagne</strong><p>Circuit de Silverstone</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [-1, 52]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP de Hongrie</strong><p>Hungaroring</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [19, 47]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP de Belgique</strong><p>Circuit de Spa-Francorchamps</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [6, 50]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP des Pays-Bas</strong><p>Circuit de Zandvoort</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [4, 52]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP dItalie</strong><p>Autodromo Nazionale di Monza</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [9, 45.6]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP de Singapour</strong><p>Circuit urbain de Singapour</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [103.863910, 1.291432]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP du Japon</strong><p>Circuit de Suzuka</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [136.538952, 34.845593]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP du Qatar</strong><p>Circuit international de Lusail</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [51.450576, 25.488392]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP des Etats-Unis</strong><p>Circuit des Amériques</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [-97.639262, 30.131563]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP du Mexique</strong><p>Autódromo Hermanos Rodríguez</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [-99.089516, 19.404042]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP du Brésil</strong><p>Autodromo José Carlos Pace</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [-46.699230, -23.704761]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP de Las Vegas</strong><p>Circuit Urbain de Las Vegas</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [-115.139101, 36.171563]
+	                        }
+	                    },
+	                    {
+	                        'type': 'Feature',
+	                        'properties': {
+	                            'description':
+	                                '<strong>GP dAbou Dabi</strong><p>Yas Marina Circuit</p>'
+	                        },
+	                        'geometry': {
+	                            'type': 'Point',
+	                            'coordinates': [54.603894, 24.475042]
+	                        }
+	                    },
+	                ]
+	            }
+	        });
+	        // Add a layer showing the places.
+	        map.addLayer({
+	            'id': 'places',
+	            'type': 'circle',
+	            'source': 'places',
+	            'paint': {
+	                'circle-color': '#4264fb',
+	                'circle-radius': 6,
+	                'circle-stroke-width': 2,
+	                'circle-stroke-color': '#ffffff'
+	            }
+	        });
+
+	        // Create a popup, but don't add it to the map yet.
+	        const popup = new mapboxgl.Popup({
+	            closeButton: false,
+	            closeOnClick: false
+	        });
+
+	        map.on('mouseenter', 'places', (e) => {
+	            // Change the cursor style as a UI indicator.
+	            map.getCanvas().style.cursor = 'pointer';
+
+	            // Copy coordinates array.
+	            const coordinates = e.features[0].geometry.coordinates.slice();
+	            const description = e.features[0].properties.description;
+
+	            // Ensure that if the map is zoomed out such that multiple
+	            // copies of the feature are visible, the popup appears
+	            // over the copy being pointed to.
+	            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+	                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+	            }
+
+	            // Populate the popup and set its coordinates
+	            // based on the feature found.
+	            popup.setLngLat(coordinates).setHTML(description).addTo(map);
+	        });
+
+	        map.on('mouseleave', 'places', () => {
+	            map.getCanvas().style.cursor = '';
+	            popup.remove();
+	        });
+	    });
+
+	</script>
+	
+</body>
+</html>
